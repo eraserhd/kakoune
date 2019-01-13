@@ -257,6 +257,15 @@ static const EnvVarDesc builtin_env_vars[] = { {
         "user_modes", false,
         [](StringView name, const Context& context, Quoting quoting) -> String
         { return join(context.keymaps().user_modes(), ' ', false); }
+    }, {
+        "changes", false,
+        [](StringView name, const Context& context, Quoting quoting) -> String
+        { return join(context.buffer().changes_since(0) |
+                      transform([&](const Buffer::Change& change)
+                                { return format("{}{}.{},{}.{}",
+                                                change.type == Buffer::Change::Insert ? '+' : '-',
+                                                change.begin.line, change.begin.column,
+                                                change.end.line, change.end.column); }), ' ', false); }
     }
 };
 
