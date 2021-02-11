@@ -1316,11 +1316,14 @@ void TerminalUI::setup_terminal()
     fputs("\033[?25l", stdout);
     // set application keypad mode, so the keypad keys send unique codes
     fputs("\033=", stdout);
+    // Opt-in kitty CSI u support
+    fputs("\033[>1u", stdout);
     fflush(stdout);
 }
 
 void TerminalUI::restore_terminal()
 {
+    fputs("\033[<u", stdout);
     fputs("\033[?1049l", stdout);
     fputs("\033[?1004l", stdout);
     fputs("\033[?25h", stdout);
