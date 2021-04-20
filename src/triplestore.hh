@@ -35,6 +35,8 @@ private:
 class Triplestore : public Singleton<Triplestore>
 {
 public:
+    void posit(Triple t);
+    void retract(Triple t);
 
 private:
 };
