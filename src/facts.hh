@@ -1,5 +1,5 @@
-#ifndef triplestore_hh_INCLUDED
-#define triplestore_hh_INCLUDED
+#ifndef facts_hh_INCLUDED
+#define facts_hh_INCLUDED
 
 #include "string.hh"
 #include "utils.hh"
@@ -22,7 +22,7 @@ private:
     long m_value;
 };
 
-class Triple
+class Fact
 {
 public:
 
@@ -32,15 +32,15 @@ private:
     String m_value;
 };
 
-class Triplestore : public Singleton<Triplestore>
+class Database : public Singleton<Database>
 {
 public:
-    void posit(Triple t);
-    void retract(Triple t);
+    void posit(Fact f);
+    void retract(Fact f);
 
 private:
 };
 
 }
 
-#endif // triplestore_hh_INCLUDED
+#endif // facts_hh_INCLUDED

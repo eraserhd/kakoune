@@ -10,6 +10,7 @@
 #include "context.hh"
 #include "event_manager.hh"
 #include "face_registry.hh"
+#include "facts.hh"
 #include "file.hh"
 #include "hash_map.hh"
 #include "highlighter.hh"
@@ -26,7 +27,6 @@
 #include "remote.hh"
 #include "shell_manager.hh"
 #include "string.hh"
-#include "triplestore.hh"
 #include "user_interface.hh"
 #include "window.hh"
 

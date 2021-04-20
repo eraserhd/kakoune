@@ -1,4 +1,4 @@
-#include "triplestore.hh"
+#include "facts.hh"
 #include "unit_tests.hh"
 
 namespace Kakoune
