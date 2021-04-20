@@ -22,9 +22,19 @@ private:
     long m_value;
 };
 
+// A fact is some piece of knowledge, a relationship between some entity and a value.
 class Fact
 {
 public:
+    inline Fact(Id entity, Id attribute, String value)
+        : m_entity(entity)
+        , m_attribute(attribute)
+        , m_value(value)
+    {}
+
+    inline Id entity() const { return m_entity; }
+    inline Id attribute() const { return m_attribute; }
+    inline String const& value() const { return m_value; }
 
 private:
     Id m_entity;
@@ -35,8 +45,7 @@ private:
 class Database : public Singleton<Database>
 {
 public:
-    void posit(Fact f);
-    void retract(Fact f);
+    void posit(Fact const& fact);
 
 private:
 };

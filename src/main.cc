@@ -9,6 +9,7 @@
 #include "context.hh"
 #include "event_manager.hh"
 #include "face_registry.hh"
+#include "facts.hh"
 #include "file.hh"
 #include "highlighters.hh"
 #include "insert_completer.hh"
@@ -746,6 +747,7 @@ int run_server(StringView session, StringView server_init,
     Server              server{session.empty() ? to_string(getpid()) : session.str(),
                                (bool)(flags & ServerFlags::Daemon)};
 
+    Database            database;
     StringRegistry      string_registry;
     GlobalScope         global_scope;
     ShellManager        shell_manager{builtin_env_vars};
