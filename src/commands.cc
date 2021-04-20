@@ -26,6 +26,7 @@
 #include "remote.hh"
 #include "shell_manager.hh"
 #include "string.hh"
+#include "triplestore.hh"
 #include "user_interface.hh"
 #include "window.hh"
 
