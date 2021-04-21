@@ -747,7 +747,7 @@ int run_server(StringView session, StringView server_init,
     Server              server{session.empty() ? to_string(getpid()) : session.str(),
                                (bool)(flags & ServerFlags::Daemon)};
 
-    Database            database;
+    Facts               facts;
     StringRegistry      string_registry;
     GlobalScope         global_scope;
     ShellManager        shell_manager{builtin_env_vars};

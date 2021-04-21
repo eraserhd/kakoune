@@ -42,7 +42,7 @@ private:
     String m_value;
 };
 
-class Database : public Singleton<Database>
+class Facts : public Singleton<Facts>
 {
 public:
     void posit(Fact const& fact);

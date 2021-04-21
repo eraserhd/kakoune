@@ -28,15 +28,15 @@ UnitTest test_fact{[]()
 }};
 
 
-void Database::posit(Fact const& fact)
+void Facts::posit(Fact const& fact)
 {
 }
 
-UnitTest test_database{[]()
+UnitTest test_facts{[]()
 {
     Id entity1 = Id::alloc();
     Id attr1 = Id::alloc();
-    Database::instance().posit(Fact(entity1, attr1, "foo"));
+    Facts::instance().posit(Fact(entity1, attr1, "foo"));
 }};
 
 }
